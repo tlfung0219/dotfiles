@@ -1,8 +1,7 @@
 # ~/.zshrc
 
 # ln -s ~/Development/dotfiles/.zshrc ~/.zshrc
-
-
+# ln -s ~/Development/dotfiles/.gitconfig ~/.gitconfig
 
 # Enable color support
 autoload -Uz compinit
@@ -22,11 +21,12 @@ fi
 # unique values only in $PATH
 typeset -U path PATH
 
+source $HOME/.aliases
+
 source ~/Development/dotfiles/.zsh/color.zsh
 source ~/Development/dotfiles/.zsh/prompt.zsh
 source ~/Development/dotfiles/.zsh/functions.zsh
 source ~/Development/dotfiles/.zsh/history.zsh
-source ~/Development/dotfiles/.aliases
 
 # Setup zsh completions for homebrew formulas (from https://docs.brew.sh/Shell-Completion)
 FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
