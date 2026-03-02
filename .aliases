@@ -14,13 +14,6 @@ tableflip() {
 alias pg="ps ax | grep -v grep | grep -i "
 alias ip="ifconfig | grep 'inet '"
 
-function profile {
-  $EDITOR ~/.bash_profile && source ~/.bash_profile
-}
-function aliases {
-  $EDITOR ~/.aliases && source ~/.aliases
-}
-
 alias df='df -h'
 alias ducks='du -cksh * | sort -rh|head -11' # Lists folders and files sizes in the current folder
 alias f='find . -iname'
@@ -33,7 +26,6 @@ alias profileme="history | awk '{print \$4}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 
 
 # Git
-alias ch="git diff --ignore-space-at-eol | $EDITOR"
 alias current_branch="git symbolic-ref HEAD | cut -d / -f 3"
 alias gap="git add --patch"
 alias gb='git branch -v'
