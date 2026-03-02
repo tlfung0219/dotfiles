@@ -1,0 +1,51 @@
+[user]
+	name = Tsailing Fung
+    email = tsailingfung@gmail.com
+[init]
+	defaultBranch = master
+[push]
+	config = default
+	default = current
+[diff]
+	renames = true
+	indentHeuristic = on
+[branch]
+	autosetupmerge = true
+[merge]
+	summary = true
+	conflictstyle = diff3
+[rebase]
+	autosquash = true
+	autostash = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	a = add
+	s = status
+	st = status
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	b = branch
+	changed = diff --name-status -r
+	ignored = "!git ls-files --others --exclude-standard"
+	touchdown = merge --no-ff
+	lastauthor = log -1 --format='%Cgreen%an <%ae>'
+	cleanup-branches = !sh -c 'git branch --merged | grep -v ^* | xargs -n 1 git branch -d'
+	pf = push --force-with-lease
+	nit = commit --amend --no-edit
+	git = !exec git
+[rerere]
+	enabled = 1
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+	mailmap = true
