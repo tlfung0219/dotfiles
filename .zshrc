@@ -8,9 +8,10 @@ autoload -Uz compinit
 compinit
 
 # Enable command completion
-setopt complete_in_word
-setopt auto_cd
-setopt correct
+setopt complete_in_word # Allow tab completion to work even if the cursor is in the middle of a word
+setopt auto_cd # Change to a directory just by typing its name
+# setopt correctall # enable spelling correction for all commands, not just cd
+unsetopt correct # disable automatic correction of commands, as it can be annoying when it guesses wrong 
 
 
 # Allow more open files than the OSX default of 256
@@ -42,3 +43,8 @@ else
   compinit -C
 fi
 unset _zcompdump
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/usr/local/bin"
+
+. "$HOME/.local/bin/env"
